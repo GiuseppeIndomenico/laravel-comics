@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = [
+        'comics' => config('db.comics'),
+        'navs' => config('db.navs'),
+        'options' => config('db.options'),
+        'dcComics' => config('footer-links.dcComics'),
+        'shop' => config('footer-links.shop'),
+        'dc' => config('footer-links.dc'),
+        'sites' => config('footer-links.sites'),
+        'socials' => config('footer-links.socials',
+        )
+
+    ];
+
+    //dd(config('db.products'));
+    return view('welcome', $data);
+})->name('welcome');
