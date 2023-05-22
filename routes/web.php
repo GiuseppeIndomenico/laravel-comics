@@ -22,11 +22,12 @@ Route::get('/', function () {
         'shop' => config('footer-links.shop'),
         'dc' => config('footer-links.dc'),
         'sites' => config('footer-links.sites'),
-        'socials' => config('footer-links.socials',
+        'socials' => config(
+            'footer-links.socials',
         )
 
     ];
 
     //dd(config('db.products'));
-    return view('welcome', $data);
+    return view('comics', $data);
 })->name('welcome');
