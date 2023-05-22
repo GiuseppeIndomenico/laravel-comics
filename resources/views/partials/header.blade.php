@@ -6,11 +6,12 @@
         </div>
         <ul class="d-flex align-items-center justify-content-center m-0 ul-header">
             @foreach ($navs as $nav)
-                <li class="p-3 d-flex align-items-center">
-                    <a class="fw-semibold" :href="{{ $nav['url'] }}">{{ $nav['title'] }}</a>
+                <li class="p-3 d-flex align-items-center {{ Route::currentRouteName() == 'comics' ? 'active' : '' }}">
+                    <a class="fw-semibold" href="{{ route('comics') }}">{{ $nav['title'] }}</a>
                 </li>
             @endforeach
         </ul>
+
     </nav>
     <div class="jumbo">
         <img src="\img\jumbotron.jpg" alt="jumbo">
